@@ -1,3 +1,4 @@
+use anyhow::{Result, anyhow};
 // use std::vec;
 
 // enum RSEnum{
@@ -98,10 +99,28 @@ fn lec3(){
     }
 }
 
+fn lec4()->Result<()>{
+    fn error_me(throw: bool) -> Result<()>{
+        if throw{
+            return Err(anyhow!("this is an error"));
+        }
+        return Ok(());
+    }
+
+    error_me(false)?;
+
+    if error_me(true).is_ok(){
+        
+    }
+
+    return  Ok(());
+}
+
 fn main() {
     // lec1();
     // lec2();
     // lec2_1();
     // lec3();
-    lec3();
+    // lec3();
+    let _ = lec4();
 }
