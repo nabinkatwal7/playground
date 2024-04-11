@@ -1,0 +1,13 @@
+{
+  "name": "playground",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/nabinkatwal7/playground.git",
+  "author": "Nabin Katwal <91274113+nabinkatwal7@users.noreply.github.com>",
+  "license": "MIT",
+  "dependencies": {
+    "@types/node": "^20.12.7",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.4.5"
+  }
+}
