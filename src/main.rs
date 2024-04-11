@@ -1,6 +1,17 @@
 // use std::vec;
 
-fn main() {
+enum RSEnum{
+    Foo2(Option<i32>),
+    Foo(fn()->i32), 
+    Bar(String), 
+    Baz(Vec<String>),
+}
+
+fn bar()->i32{
+    return 5;
+}
+
+fn lec1() {
     // let mut a = vec![];
     // let mut b = a;
 
@@ -27,5 +38,40 @@ fn main() {
 
     // let c = &a;
 
+}
 
+fn lec2(){
+    let foo = RSEnum::Foo(bar);
+
+    match foo {
+        RSEnum::Foo2(Some(value)) => print!("{}",value),
+        RSEnum::Foo2(None) => {},
+        RSEnum::Foo(value) => print!("{}",value),
+        _ => {}
+    }
+}
+
+fn lec2_1(){
+    let foo = Some(5);
+
+    if let Some(value) = foo {
+        print!("{}",value);
+    }
+
+    match foo{
+        Some(value) => print!("{}",value),
+        None => {}
+    };
+
+    foo.map(|x| {
+        print!("{}",x);
+    });
+
+    foo.filter(|x| x < &10 );
+}
+
+fn main() {
+    // lec1();
+    // lec2();
+    lec2_1()
 }
